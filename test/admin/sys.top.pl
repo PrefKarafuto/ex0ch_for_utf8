@@ -151,7 +151,7 @@ sub SetMenuList
 		$Base->SetMenu('<hr>', '');
 		$Base->SetMenu('操作ログ閲覧', "'sys.top','DISP','ADMINLOG'");
 		# デバッグ用
-		#$Base->SetMenu('BBS.CGI実行時間ログ閲覧', "'sys.top','DISP','EXTIMELOG'");
+		$Base->SetMenu('BBS.CGI実行時間ログ閲覧', "'sys.top','DISP','EXTIMELOG'");
 	}
 }
 

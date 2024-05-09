@@ -1,0 +1,3 @@
+<Files "bbs.cgi">
+AddHandler fcgid-script .cgi
+</Files>

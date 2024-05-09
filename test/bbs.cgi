@@ -7,6 +7,7 @@
 
 use lib './perllib';
 
+
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
@@ -19,15 +20,21 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 
 # 実行時間の計測開始 (デバッグ用)
 # ./admin/sys.tpo.plのSetMenuList関数でコメントアウトを解除すると管理画面からログが閲覧できます
-#use Time::HiRes qw(gettimeofday tv_interval);
-#my $start_time = [gettimeofday];
+use Time::HiRes qw(gettimeofday tv_interval);
+use FCGI;
+my ($exit, $log, $bbs);
+my $req = FCGI::Request();
+my $count = 0;
+while($req->Accept() >= 0) {
+	my $start_time = [gettimeofday];
 
-# BBSCGI実行
-my ($exit, $log, $bbs) = BBSCGI();
+	# BBSCGI実行
+	($exit, $log, $bbs) = BBSCGI();
 
-# ログに保存 (デバッグ用)
-#CGIExecutionTime($start_time, 100);
-
+	# ログに保存 (デバッグ用)
+	CGIExecutionTime($start_time, 100);
+	$count++;
+}
 # CGIの実行結果を終了コードとする
 exit($exit);
 
@@ -650,7 +657,7 @@ sub CGIExecutionTime
 	# ログファイルに追記
 	my $log_file = './info/execution_time.cgi';
 	open my $fh, '>>', $log_file or die "Cannot open log file: $!";
-	print $fh "$time<>$elapsed<>$bbs<>$log\n";
+	print $fh "$time<>$elapsed<>$bbs:$count<>$log\n";
 	close $fh;
 
 	# ファイルパーミッションの設定
