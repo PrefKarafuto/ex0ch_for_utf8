@@ -8,6 +8,7 @@ package	DATA_UTILS;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 use Encode;
 use Socket qw(inet_pton inet_aton AF_INET6 AF_INET);

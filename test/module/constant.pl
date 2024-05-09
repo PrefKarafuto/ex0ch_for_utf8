@@ -12,6 +12,7 @@ package	ZP;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 #use bigint;
 

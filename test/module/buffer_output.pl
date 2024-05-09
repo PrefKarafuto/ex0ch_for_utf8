@@ -8,6 +8,7 @@ package	BUFFER_OUTPUT;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use Encode;
 use warnings;
 

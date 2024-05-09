@@ -8,6 +8,7 @@ package	BBS_SERVICE;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use LWP::UserAgent;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use warnings;

@@ -11,6 +11,7 @@ package	ADMIN_CGI_BASE;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 require './module/buffer_output.pl';

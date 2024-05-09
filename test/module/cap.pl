@@ -21,6 +21,7 @@ package	CAP;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 #------------------------------------------------------------------------------------------------------------
@@ -301,6 +302,7 @@ package	CAP_GROUP;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 #------------------------------------------------------------------------------------------------------------
@@ -638,6 +640,7 @@ package CAP_SECURITY;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 #------------------------------------------------------------------------------------------------------------

@@ -21,6 +21,7 @@ package	USER_INFO;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 #------------------------------------------------------------------------------------------------------------
@@ -303,6 +304,7 @@ package	GROUP_INFO;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 #------------------------------------------------------------------------------------------------------------
@@ -576,6 +578,7 @@ package SECURITY;
 use strict;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
+use open IO => ':encoding(UTF-8)';
 use warnings;
 
 use CGI::Session;
