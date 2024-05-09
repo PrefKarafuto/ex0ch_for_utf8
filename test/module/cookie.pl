@@ -51,6 +51,7 @@ sub Init
 			my ($name, $value) = split(/=/, $_, 2);
 			$value =~ s/^"|"$//g;
 			$value =~ s/%([0-9A-Fa-f][0-9A-Fa-f])/pack('H2', $1)/eg;
+			$value=Encode::decode('utf8',$value);
 			$this->{'COOKIE'}->{$name} = $value;
 		}
 		return 1;

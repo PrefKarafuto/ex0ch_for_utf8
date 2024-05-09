@@ -66,6 +66,7 @@ sub DecodeForm
 		$val =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack('C', hex($1))/eg;
 		$val =~ s/\r\n|\r|\n/\n/g;
 		$val =~ s/\0//g;
+		$val=Encode::decode('utf8',$val);
 		$val =~ s|〜|～|g;
 		$this->{'FORM'}->{$var} = $val;
 		$this->{'FORM'}->{"Raw_$var"} = $val;
