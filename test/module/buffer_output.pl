@@ -87,6 +87,7 @@ sub Flush
 	if ($flag) {
 		chmod($perm, $path);
 		if (open(my $fh, (-f $path ? '+<' : '>'), $path)) {
+			binmode $fh, ':encoding(UTF-8)';
 			flock($fh, 2);
 			seek($fh, 0, 0);
 			print $fh @{$this->{'BUFF'}};
